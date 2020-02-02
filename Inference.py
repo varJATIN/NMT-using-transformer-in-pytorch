@@ -9,7 +9,7 @@ def infernce(inp):
     max_val,n=torch.max(tar.view(-1, vocab_size_fr),1)
     if(n[-1]==1 or len(targ)>len(inp)):
       break
-    tar=model.embed_fr(n[-1).reshape(1,1,100)# 100 is word vector dimension
+    tar=model.embed_fr(n[-1]).reshape(1,1,100)# 100 is word vector dimension
     targ=torch.cat((targ,tar),0)
   return n
 
